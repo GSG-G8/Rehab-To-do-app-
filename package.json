@@ -1,0 +1,23 @@
+{
+  "name": "Rehab-To-do-app-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G8/Rehab-To-do-app-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G8/Rehab-To-do-app-/issues"
+  },
+  "homepage": "https://github.com/GSG-G8/Rehab-To-do-app-#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}

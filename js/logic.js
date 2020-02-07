@@ -18,10 +18,12 @@ var todoFunctions = {
     //cloneArrayOfObjects will create a copy of the todos array 
     //changes to the new array don't affect the original
     cloneArrayOfObjects: function(todos) {
-      return todos.map(todo => JSON.parse(JSON.stringify(todo)));
+      return todos.map(function(todo){
+        return JSON.parse(JSON.stringify(todo));
+      });
     },
     
-    addTodo: function(todos, newTodo) {
+    addTodo: function(todos, newDescription) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // returns a new array, it should contain todos with the newTodo added to the end.
       // add an id to the newTodo. You can use the generateId function to create an id.
@@ -29,19 +31,17 @@ var todoFunctions = {
       const newArr = todoFunctions.cloneArrayOfObjects(todos);
       const obj = {
           id: todoFunctions.generateId(),
-          todo = newTodo,
+          description: newDescription,
           done:false
       }
-      newArr.push(obj);
-      return newArr;
+      return newArr.concat(obj);
     },
     deleteTodo: function(todos, idToDelete) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
       const newArr = todoFunctions.cloneArrayOfObjects(todos);
-      newArr = newarr.filter(todo => todo.id !== idToDelete);
-      return newArr;
+      return newArr.filter(todo => todo.id !== idToDelete);
     },
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -60,12 +60,12 @@ var todoFunctions = {
       // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
       // sortFunction will have same signature as the sort function in array.sort
       // hint: array.slice, array.sort
-      const newArr = todoFunctions.cloneArrayOfObjects(todos); //put the done in new array
-      const newTodosDone = newArr.filter(todo => todo.done); //put not done in new array
-      const newTodosNotDone = newArray.filter(todo => !todo.done);
+      const newArr = todoFunctions.cloneArrayOfObjects(todos); 
+      const newTodosDone = newArr.filter(todo => todo.done); //put the done in new array
+      const newTodosNotDone = newArr.filter(todo => !todo.done); //put not done in new array
       //function for sort alphaptic from a-z
       const sortFunc = (a,b) => {
-          if (a.todo > b.todo) {
+          if (a.description > b.description) {
               return 1;
           } else {
               return -1;
