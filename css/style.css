@@ -172,19 +172,19 @@
     color: #e16621;
   }
   
-  #addTitle {
+  #title {
     font-size: 18px;
     font-weight: 700;
     color: #143652;
   }
   
-  #addDate {
+  #date {
     display: inline-block;
     color: #e16621;
     font-weight: 500;
   }
   
-  #addDetails {
+  #details {
     color: #143652;
   }
   
