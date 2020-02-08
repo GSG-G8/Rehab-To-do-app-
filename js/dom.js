@@ -3,13 +3,16 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
     // This is the dom node where we will keep our todo
-    var container = document.getElementById('todo-container');
-    var addTodoForm = document.getElementById('add-todo');
+    const container = document.getElementById('todo-container');
+    const addTodoForm = document.getElementById('addForm');
 
-    const field = document.querySelectorAll('.field').forEach(item => {
-        if (document.querySelector('p.error') != null) { // for prevent error if the error(when click on any input) //
-            document.querySelector('p.error').remove();
+    let field = document.querySelectorAll('.field').forEach(item => {
+      item.addEventListener('click', function(){
+        // for prevent error if the error //
+        if(document.querySelector('p.error') != null) {
+          document.querySelector('p.error').remove();
         }
+      });
     });
   
     var state; // this is our initial todoList
@@ -32,14 +35,14 @@
     const searchTodo = document.getElementById('search');
     searchTodo.addEventListener('keyup', () => {
         const filter = searchTodo.value.toUpperCase();
-        const items = todoListNode.getElementsByClassName('item');
+        const items = document.getElementsByClassName('item');
         for (let i = 0; i < items.length; i++) {
-            let title = item[i].querySelector('#title');
+            let title = items[i].querySelector('#title');
             let titleVal = title.textContent;
             if (titleVal.toUpperCase().indexOf(filter) > -1) {
-                item[i].style.display = '';
+                items[i].style.display = '';
             } else {
-                item[i].style.display = 'none';
+                items[i].style.display = 'none';
             }
         }
     });
