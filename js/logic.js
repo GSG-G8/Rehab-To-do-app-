@@ -69,7 +69,7 @@ var todoFunctions = {
       const newTodosNotDone = newArr.filter(todo => !todo.done); //put not done in new array
       //function for sort alphaptic from a-z
       const sortFunc = (a,b) => {
-          if (a.description > b.description) {
+          if (a.title > b.title) {
               return 1;
           } else {
               return -1;
