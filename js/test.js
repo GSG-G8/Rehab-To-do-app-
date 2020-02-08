@@ -8,7 +8,7 @@ const arr = [
 describe('Testing todo return new array', () => {
   // test addTodo
   test('Should return new array with new todo added to the end',  () => {
-    const actual = todoFunctions.addTodo([], 'first todo');
+    const actual = todoFunctions.addTodo([], 'first todo', '2020-02-12', 'first details');
     const expected = [
       { id: 1, title: 'first todo', date: '2020-02-12', details: 'first details', done:false }
     ];
@@ -17,7 +17,7 @@ describe('Testing todo return new array', () => {
 
   // add another todo
   test('Should return new array with new todo added to the end',  () => {
-    const actual = todoFunctions.addTodo([{ id: 1, title: 'first todo', date: '2020-02-12', details: 'first details', done:false }], 'drink coffee');
+    const actual = todoFunctions.addTodo([{ id: 1, title: 'first todo', date: '2020-02-12', details: 'first details', done:false }], 'drink coffee', '2020-02-15', 'drink coffee with freinds');
     const expected = [
       { id: 1, title: 'first todo', date: '2020-02-12', details: 'first details', done:false },
       { id: 2, title: 'drink coffee', date: '2020-02-15', details: 'drink coffee with freinds', done:false }
