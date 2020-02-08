@@ -23,15 +23,19 @@ var todoFunctions = {
       });
     },
     
-    addTodo: function(todos, newDescription) {
+    addTodo: function(todos, newTitle, newDate, newDetails) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // returns a new array, it should contain todos with the newTodo added to the end.
       // add an id to the newTodo. You can use the generateId function to create an id.
       // hint: array.concat
+
+      if (newTitle === '' || newDate === '' || newDetails === '' || !isNaN(newTitle)) return -1; // Validate
       const newArr = todoFunctions.cloneArrayOfObjects(todos);
       const obj = {
           id: todoFunctions.generateId(),
-          description: newDescription,
+          title: newTitle,
+          date: newDate,
+          details: newDetails,
           done:false
       }
       return newArr.concat(obj);
